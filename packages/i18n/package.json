@@ -5,32 +5,69 @@
   "license": "UNLICENSED",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist", "locales", "scripts", "bin"],
+  "files": [
+    "dist",
+    "locales",
+    "scripts",
+    "bin"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "bin": { "bandada-i18n-check": "./bin/bandada-i18n-check.mjs" },
+  "bin": {
+    "bandada-i18n-check": "./bin/bandada-i18n-check.mjs"
+  },
   "exports": {
     ".": {
-      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./format": {
-      "import": { "types": "./dist/format.d.ts", "default": "./dist/format.js" },
-      "require": { "types": "./dist/format.d.cts", "default": "./dist/format.cjs" }
+      "import": {
+        "types": "./dist/format.d.ts",
+        "default": "./dist/format.js"
+      },
+      "require": {
+        "types": "./dist/format.d.cts",
+        "default": "./dist/format.cjs"
+      }
     },
     "./resolve-locale": {
-      "import": { "types": "./dist/resolve-locale.d.ts", "default": "./dist/resolve-locale.js" },
-      "require": { "types": "./dist/resolve-locale.d.cts", "default": "./dist/resolve-locale.cjs" }
+      "import": {
+        "types": "./dist/resolve-locale.d.ts",
+        "default": "./dist/resolve-locale.js"
+      },
+      "require": {
+        "types": "./dist/resolve-locale.d.cts",
+        "default": "./dist/resolve-locale.cjs"
+      }
     },
     "./config": {
-      "import": { "types": "./dist/config.d.ts", "default": "./dist/config.js" },
-      "require": { "types": "./dist/config.d.cts", "default": "./dist/config.cjs" }
+      "import": {
+        "types": "./dist/config.d.ts",
+        "default": "./dist/config.js"
+      },
+      "require": {
+        "types": "./dist/config.d.cts",
+        "default": "./dist/config.cjs"
+      }
     },
     "./locales/*": "./locales/*",
     "./errors": {
-      "import": { "types": "./dist/errors.d.ts", "default": "./dist/errors.js" },
-      "require": { "types": "./dist/errors.d.cts", "default": "./dist/errors.cjs" }
+      "import": {
+        "types": "./dist/errors.d.ts",
+        "default": "./dist/errors.js"
+      },
+      "require": {
+        "types": "./dist/errors.d.cts",
+        "default": "./dist/errors.cjs"
+      }
     },
     "./scripts/i18n-check": "./scripts/i18n-check.mjs",
     "./package.json": "./package.json"
@@ -52,5 +89,21 @@
     "typescript": "~5.9.3",
     "vitest": "^5.0.4",
     "yaml": "^2.9.1"
+  },
+  "typesVersions": {
+    "*": {
+      "format": [
+        "dist/format.d.ts"
+      ],
+      "resolve-locale": [
+        "dist/resolve-locale.d.ts"
+      ],
+      "config": [
+        "dist/config.d.ts"
+      ],
+      "errors": [
+        "dist/errors.d.ts"
+      ]
+    }
   }
 }

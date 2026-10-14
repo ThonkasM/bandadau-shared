@@ -1,8 +1,8 @@
 import { type DynamicModule, Module } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 
-import { AUDIENCES } from '../principal';
 import { createJwtVerifier, type JwtVerifierOptions } from '../jwt-verifier';
+import { AUDIENCES } from '../principal';
 import { ServiceTokenProvider, type ServiceTokenProviderOptions } from '../service-token-provider';
 import { JwtAuthGuard } from './jwt-auth.guard';
 import { RolesGuard } from './roles.guard';

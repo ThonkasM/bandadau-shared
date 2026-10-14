@@ -2,13 +2,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { parse } from 'yaml';
 import { describe, expect, expectTypeOf, it } from 'vitest';
+import { parse } from 'yaml';
 
 import type { EventData, EventType } from '../src/generated/events';
 import { eventMeta, eventTypes } from '../src/generated/events';
-import type { components as Social } from '../src/generated/openapi/social';
 import type { Role } from '../src/generated/graphql/admin';
+import type { components as Social } from '../src/generated/openapi/social';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const asyncapi = path.resolve(root, '../../../bandadau-docs/contracts/asyncapi/bandada-events.yaml');

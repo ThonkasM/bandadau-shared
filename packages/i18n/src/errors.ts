@@ -1,1 +1,1 @@
-export { errorKey, errorMessage, hasErrorMessage, type ErrorCode } from './catalogs';
+export { type ErrorCode,errorKey, errorMessage, hasErrorMessage } from './catalogs';

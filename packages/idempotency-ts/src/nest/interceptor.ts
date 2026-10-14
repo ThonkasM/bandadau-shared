@@ -6,8 +6,8 @@ import { hashRequest } from '../hash';
 import { parseIdempotencyKey } from '../key';
 import { idempotencyProblem } from '../problems';
 import {
-  IDEMPOTENT_REPLAYED_HEADER,
   type IdempotencyStore,
+  IDEMPOTENT_REPLAYED_HEADER,
   isStorableStatus,
   REPLAYED_HEADERS,
   type StoredResponse,

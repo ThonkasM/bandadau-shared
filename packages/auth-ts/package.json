@@ -5,18 +5,32 @@
   "license": "UNLICENSED",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./nest": {
-      "import": { "types": "./dist/nest.d.ts", "default": "./dist/nest.js" },
-      "require": { "types": "./dist/nest.d.cts", "default": "./dist/nest.cjs" }
+      "import": {
+        "types": "./dist/nest.d.ts",
+        "default": "./dist/nest.js"
+      },
+      "require": {
+        "types": "./dist/nest.d.cts",
+        "default": "./dist/nest.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
@@ -35,10 +49,18 @@
     "rxjs": "^7.8.0"
   },
   "peerDependenciesMeta": {
-    "@nestjs/common": { "optional": true },
-    "@nestjs/core": { "optional": true },
-    "reflect-metadata": { "optional": true },
-    "rxjs": { "optional": true }
+    "@nestjs/common": {
+      "optional": true
+    },
+    "@nestjs/core": {
+      "optional": true
+    },
+    "reflect-metadata": {
+      "optional": true
+    },
+    "rxjs": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@bandada/tsconfig": "workspace:*",
@@ -52,5 +74,12 @@
     "tsup": "^9.0.0",
     "typescript": "~5.9.3",
     "vitest": "^5.0.4"
+  },
+  "typesVersions": {
+    "*": {
+      "nest": [
+        "dist/nest.d.ts"
+      ]
+    }
   }
 }

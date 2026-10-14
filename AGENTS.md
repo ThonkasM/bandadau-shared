@@ -36,16 +36,66 @@ bandadau-shared/packages/<nombre>/
 └── tsconfig.json       extends @bandada/tsconfig
 ```
 
-## Comandos (propuestos)
+## Comandos
 
 ```bash
-pnpm -r --filter "./packages/**" build
-pnpm --filter @bandada/<nombre> test | lint | typecheck
-pnpm contracts:gen                              # regenera contracts-ts desde ../bandadau-docs/contracts
-pnpm --filter @bandada/ui-tokens build          # Style Dictionary → dist/
-pnpm --filter @bandada/ui-tokens test           # contraste + mismas claves light/dark
-pnpm --filter @bandada/i18n i18n:check          # paridad es/en, ICU válido, claves huérfanas
+corepack enable && pnpm install --frozen-lockfile    # pnpm 10 fijado en packageManager (pnpm 12 no funciona con Corepack aquí)
+pnpm build                                          # todos los paquetes, en orden de dependencia (dist/ no se commitea)
+pnpm test                                           # Vitest; lo que necesita motores reales se omite sin *_URL
+pnpm test:integration                               # contenedores efímeros bandadau-shared-test-* (DynamoDB Local, Mongo rs0, RabbitMQ)
+pnpm lint | pnpm typecheck | pnpm smoke             # ESLint, tsc --noEmit, carga ESM/CJS de cada entrada exportada
+pnpm contracts:gen                                  # regenera contracts-ts/src/generated desde ../bandadau-docs/contracts (SE COMMITEA)
+pnpm --filter @bandada/ui-tokens build              # Style Dictionary → dist/ + contraste WCAG AA (falla si no cumple)
+pnpm i18n:check                                     # paridad es/en, ICU válido, placeholders, códigos de error de los contratos
 ```
+
+Cada paquete expone `exports` explícitos (ESM + CJS + d.ts) y `typesVersions` (resolución `node10` de los servicios
+Nest). Los subpaths `/nest` (auth, idempotency, messaging) son los únicos que importan `@nestjs/*` (peer opcional);
+el núcleo de cada paquete no depende de Nest. Docker: ver "Uso en Docker" del `README.md`.
+
+## Notas de implementación por paquete
+
+- **tsconfig / eslint-config**: presets `node`, `react`, `next`, `expo`, `angular` (flat config). Las reglas
+  `no-restricted-syntax` rechazan paleta cruda (`bg-blue-600`), colores arbitrarios (`bg-[#fff]`) y colores literales
+  en estilos; `react/jsx-no-literals` rechaza texto en JSX. Probado con `ESLint.lintText`.
+- **ui-tokens**: fuentes en `tokens/{primitive,semantic,component}`; `build/style-dictionary.config.mjs` (Style
+  Dictionary 4.4) resuelve cada modo por separado y genera `dist/css/tokens.css` (`:root,[data-theme='light']` y
+  `[data-theme='dark']` solo con lo que difiere), `dist/css/tailwind-theme.css` (`@theme inline` con
+  `--color-*: initial` para que la paleta cruda no exista como utilidad; `text.muted`→`text-muted`,
+  `bg.muted`→`bg-surface-muted`), `dist/scss/_tokens.scss`, `dist/json/tokens.flat.json`, `dist/ts/tokens.ts`
+  (`tokens: {light,dark}` con dimensiones numéricas para React Native, `tokenNames`, `flatTokens`, `cssVarName`).
+  `contrast-pairs.json` declara los pares de `check-contrast.mjs`. `src/theme-script.ts`: `themeScript` (anti-FOUC),
+  `applyTheme`, `resolveEffectiveTheme`. `src/generated/` se genera en el build (no se commitea).
+- **i18n**: `locales/{es,en}/{common,enums,errors}.json` (sin envoltorio de namespace). `errors.json` cubre todos los
+  `code` de error de `bandadau-docs/contracts/openapi` (script `scripts/extract-error-codes.mjs`, que además agrega
+  los códigos de protocolo: `IDEMPOTENCY_KEY_*`, `TOO_MANY_ATTEMPTS`, códigos de campo `REQUIRED`/`TOO_LONG`…) y los
+  enums del modelo (OpenAPI + GraphQL). `bandada-i18n-check <dir> [--src <dir>] [--contracts <dir>] [--strict]`.
+  Formato: `es-BO`/`en-US`, `America/La_Paz` (`14 oct 2026, 18:30` / `Oct 14, 2026, 6:30 PM`).
+- **contracts-ts**: un módulo por servicio OpenAPI (`/openapi/<servicio>`), `EventDataMap`/`EventType`/`eventMeta`
+  desde AsyncAPI (los esquemas se pasan por `openapi-typescript`), tipos GraphQL con `graphql-codegen`
+  (`enumsAsTypes`, escalares `DateTime/Date/UUID`→`string`, `JSON`→`unknown`, `Long`→`number`).
+- **auth-ts**: `createJwtVerifier` (jose: `createRemoteJWKSet`, RS256 obligatorio, `iss`/`aud`/`typ`, tolerancia 30 s,
+  refetch por `kid` desconocido con cooldown 30 s), `ServiceTokenProvider` (JSON `{clientId, clientSecret, scopes}`
+  según OpenAPI; single-flight; refresco 30 s antes de `exp`). Nest: `AuthModule.forRoot`, `JwtAuthGuard`
+  (`@Public()`), `RolesGuard` (`@Roles()`), `ServiceAuthGuard` + `@Internal(...scopes)` para `/internal/v1`,
+  `@CurrentUser()`. Los errores son `HttpException` con cuerpo Problem Details (`UNAUTHORIZED`, `FORBIDDEN`, 503).
+- **idempotency-ts**: puerto `IdempotencyStore` (`reserve/complete/release`), adaptadores `DynamoIdempotencyStore`
+  e `InMemoryIdempotencyStore`; `hashRequest` (SHA-256 sobre método, ruta plantilla, params, principal, cuerpo
+  canónico). Interceptor: 400 `IDEMPOTENCY_KEY_MISSING/INVALID`, 409 `IDEMPOTENCY_IN_PROGRESS` (+`Retry-After: 1`),
+  422 `IDEMPOTENCY_KEY_REUSED`, 409 `IDEMPOTENCY_RESPONSE_UNAVAILABLE` (>300 KB); guarda 2xx y 400/404/409/422, libera
+  401/403/429/5xx. Errores de dominio que no sean `HttpException` se guardan solo si el servicio da `mapError`.
+- **messaging-ts**: fase 1 → `topology: 'verify'` (por defecto) comprueba exchanges, cola, `.retry.*` y `.dlq` y
+  reintenta al arrancar; `'declare'` crea la topología de eventos-y-mensajeria.md §2.2 (para pruebas o fase 2).
+  Reintentos 5 s / 30 s / 5 min (`DEFAULT_RETRY_DELAYS`, configurables); permanentes, tipos desconocidos y reintentos
+  agotados → `nack(requeue=false)` → DLQ. Inbox/outbox: `Inbox<Tx>.runOnce(key, work)` y `Outbox<Tx>.enqueue(tx, event)`
+  con `Tx` = sesión Mongo, `DynamoTransaction` (`TransactWriteItems`, máx. 100 ítems) o `MemoryTx`.
+  Mongo: `outbox` / `processedMessages` (el inbox usa upsert, no insert, para no abortar la transacción);
+  Dynamo: `OUTBOX#<id>`/`META` con `gsi1pk=OUTBOX#PENDING` (índice `GSI1`) e `INBOX#<id>`/`META`.
+- Diferencias **entre contratos y guías** (bandadau-docs es solo lectura; se implementó lo contractual y hay que
+  corregir la fuente): (1) `seguridad-y-sso.md` §6.2 describe `service-token` como formulario `grant_type=client_credentials`
+  con `access_token`, pero `identity-service.yaml` define JSON `{clientId, clientSecret, scopes}` → `{accessToken, expiresIn}`
+  (el proveedor envía JSON y tolera snake_case en la respuesta); (2) `bandada-events.yaml` dice reintentos 1 s/5 s/25 s,
+  `eventos-y-mensajeria.md` §2.3 dice colas de espera 5 s/30 s/5 min (se implementó esto último).
 
 ## Variables de entorno
 

@@ -1,6 +1,6 @@
+import type { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 import { type DynamicModule, Module } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import type { DynamoDBDocumentClient } from '@aws-sdk/lib-dynamodb';
 
 import { DynamoIdempotencyStore } from '../stores/dynamodb';
 import type { IdempotencyStore } from '../types';

@@ -1,10 +1,10 @@
 export * from './generated/tokens';
 export {
-  THEME_STORAGE_KEY,
   applyTheme,
   createThemeScript,
-  resolveEffectiveTheme,
-  themeScript,
   type EffectiveTheme,
+  resolveEffectiveTheme,
+  THEME_STORAGE_KEY,
   type ThemePreference,
+  themeScript,
 } from './theme-script';

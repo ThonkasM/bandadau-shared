@@ -5,18 +5,32 @@
   "license": "UNLICENSED",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./theme-script": {
-      "import": { "types": "./dist/theme-script.d.ts", "default": "./dist/theme-script.js" },
-      "require": { "types": "./dist/theme-script.d.cts", "default": "./dist/theme-script.cjs" }
+      "import": {
+        "types": "./dist/theme-script.d.ts",
+        "default": "./dist/theme-script.js"
+      },
+      "require": {
+        "types": "./dist/theme-script.d.cts",
+        "default": "./dist/theme-script.cjs"
+      }
     },
     "./css/*": "./dist/css/*",
     "./scss/*": "./dist/scss/*",
@@ -40,5 +54,12 @@
     "tsup": "^9.0.0",
     "typescript": "~5.9.3",
     "vitest": "^5.0.4"
+  },
+  "typesVersions": {
+    "*": {
+      "theme-script": [
+        "dist/theme-script.d.ts"
+      ]
+    }
   }
 }

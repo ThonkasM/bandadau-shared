@@ -32,8 +32,6 @@ async function genOpenApi() {
   return services;
 }
 
-const pascal = (s) => s.replace(/(^|[-_.])(\w)/g, (_, __, c) => c.toUpperCase());
-
 async function genEvents() {
   const doc = parse(fs.readFileSync(path.join(contracts, 'asyncapi/bandada-events.yaml'), 'utf8'));
   const schemas = { ...doc.components.schemas };

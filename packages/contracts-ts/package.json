@@ -5,30 +5,62 @@
   "license": "UNLICENSED",
   "type": "module",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./problem": {
-      "import": { "types": "./dist/problem.d.ts", "default": "./dist/problem.js" },
-      "require": { "types": "./dist/problem.d.cts", "default": "./dist/problem.cjs" }
+      "import": {
+        "types": "./dist/problem.d.ts",
+        "default": "./dist/problem.js"
+      },
+      "require": {
+        "types": "./dist/problem.d.cts",
+        "default": "./dist/problem.cjs"
+      }
     },
     "./events": {
-      "import": { "types": "./dist/events.d.ts", "default": "./dist/events.js" },
-      "require": { "types": "./dist/events.d.cts", "default": "./dist/events.cjs" }
+      "import": {
+        "types": "./dist/events.d.ts",
+        "default": "./dist/events.js"
+      },
+      "require": {
+        "types": "./dist/events.d.cts",
+        "default": "./dist/events.cjs"
+      }
     },
     "./graphql/admin": {
-      "import": { "types": "./dist/graphql/admin.d.ts", "default": "./dist/graphql/admin.js" },
-      "require": { "types": "./dist/graphql/admin.d.cts", "default": "./dist/graphql/admin.cjs" }
+      "import": {
+        "types": "./dist/graphql/admin.d.ts",
+        "default": "./dist/graphql/admin.js"
+      },
+      "require": {
+        "types": "./dist/graphql/admin.d.cts",
+        "default": "./dist/graphql/admin.cjs"
+      }
     },
     "./openapi/*": {
-      "import": { "types": "./dist/openapi/*.d.ts", "default": "./dist/openapi/*.js" },
-      "require": { "types": "./dist/openapi/*.d.cts", "default": "./dist/openapi/*.cjs" }
+      "import": {
+        "types": "./dist/openapi/*.d.ts",
+        "default": "./dist/openapi/*.js"
+      },
+      "require": {
+        "types": "./dist/openapi/*.d.cts",
+        "default": "./dist/openapi/*.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
@@ -49,5 +81,21 @@
     "typescript": "~5.9.3",
     "vitest": "^5.0.4",
     "yaml": "^2.9.1"
+  },
+  "typesVersions": {
+    "*": {
+      "problem": [
+        "dist/problem.d.ts"
+      ],
+      "events": [
+        "dist/events.d.ts"
+      ],
+      "graphql/admin": [
+        "dist/graphql/admin.d.ts"
+      ],
+      "openapi/*": [
+        "dist/openapi/*.d.ts"
+      ]
+    }
   }
 }

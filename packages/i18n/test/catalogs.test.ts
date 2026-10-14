@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 import { describe, expect, it } from 'vitest';
 
-import { checkLocales } from '../scripts/i18n-check.mjs';
 import { extractErrorCodes, PROTOCOL_CODES } from '../scripts/extract-error-codes.mjs';
+import { checkLocales } from '../scripts/i18n-check.mjs';
 import { errorKey, errorMessage, resources } from '../src/catalogs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');

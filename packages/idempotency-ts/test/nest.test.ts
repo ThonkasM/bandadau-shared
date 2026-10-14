@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 
-import { Body, ConflictException, Controller, Get, Header, HttpCode, Inject, type INestApplication, InternalServerErrorException, Param, Post, Put } from '@nestjs/common';
+import { Body, ConflictException, Controller, Get, Header, HttpCode, type INestApplication, InternalServerErrorException, Param, Post, Put } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
 import { hashRequest, InMemoryIdempotencyStore } from '../src';
-import { Idempotent, IdempotencyModule, type IdempotencyMetric } from '../src/nest';
+import { type IdempotencyMetric,IdempotencyModule, Idempotent } from '../src/nest';
 
 const K1 = '0192b7c0-7c1e-7d55-9a1e-2f9d8c0b1a10';
 const K2 = '0192b7c0-7c1e-7d55-9a1e-2f9d8c0b1a11';
