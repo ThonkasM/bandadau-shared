@@ -960,8 +960,18 @@ export interface components {
             createdAt: string;
             /** Format: uuid */
             id: string;
+            /**
+             * Format: uuid
+             * @description Comentario raíz al que responde este comentario (un solo nivel de anidación). Ausente en comentarios raíz.
+             */
+            parentId?: string;
             /** Format: uuid */
             postId: string;
+            /**
+             * Format: int64
+             * @description Cantidad de respuestas directas (solo relevante en comentarios raíz).
+             */
+            replyCount?: number;
             status: components["schemas"]["CommentStatus"];
             text: string;
         };
@@ -1023,6 +1033,11 @@ export interface components {
             items: components["schemas"]["ContentReport"][];
         };
         CreateCommentRequest: {
+            /**
+             * Format: uuid
+             * @description Si se envía, el comentario es una respuesta a ese comentario raíz (UC-07).
+             */
+            parentId?: string;
             text: string;
         };
         CreateGroupRequest: {
