@@ -3,16 +3,16 @@
     "bg": {
       "$type": "color",
       "canvas": {
-        "$value": "{color.neutral.950}"
+        "$value": "{color.blue.950}"
       },
       "surface": {
-        "$value": "{color.neutral.900}"
+        "$value": "{color.blue.900}"
       },
       "surface-raised": {
-        "$value": "{color.neutral.800}"
+        "$value": "{color.blue.800}"
       },
       "muted": {
-        "$value": "{color.neutral.800}"
+        "$value": "{color.blue.800}"
       },
       "inverse": {
         "$value": "{color.neutral.50}"
@@ -24,10 +24,10 @@
         "$value": "{color.neutral.50}"
       },
       "secondary": {
-        "$value": "{color.neutral.300}"
+        "$value": "{color.blue.100}"
       },
       "muted": {
-        "$value": "{color.neutral.400}"
+        "$value": "{color.blue.200}"
       },
       "inverse": {
         "$value": "{color.neutral.900}"
@@ -42,13 +42,13 @@
     "border": {
       "$type": "color",
       "default": {
-        "$value": "{color.neutral.700}"
+        "$value": "{color.blue.700}"
       },
       "strong": {
-        "$value": "{color.neutral.500}"
+        "$value": "{color.blue.400}"
       },
       "focus": {
-        "$value": "{color.blue.300}"
+        "$value": "{color.yellow.400}"
       }
     },
     "action": {
@@ -69,13 +69,13 @@
       },
       "secondary": {
         "bg": {
-          "$value": "{color.neutral.800}"
+          "$value": "{color.blue.800}"
         },
         "bg-hover": {
-          "$value": "{color.neutral.700}"
+          "$value": "{color.blue.700}"
         },
         "bg-pressed": {
-          "$value": "{color.neutral.600}"
+          "$value": "{color.blue.600}"
         },
         "fg": {
           "$value": "{color.neutral.50}"
@@ -97,10 +97,10 @@
       },
       "disabled": {
         "bg": {
-          "$value": "{color.neutral.800}"
+          "$value": "{color.blue.800}"
         },
         "fg": {
-          "$value": "{color.neutral.600}"
+          "$value": "{color.blue.400}"
         }
       }
     },
@@ -141,7 +141,7 @@
       },
       "info": {
         "bg": {
-          "$value": "{color.blue.900}"
+          "$value": "{color.blue.800}"
         },
         "fg": {
           "$value": "{color.blue.100}"
@@ -192,10 +192,10 @@
         }
       },
       "grid": {
-        "$value": "{color.neutral.800}"
+        "$value": "{color.blue.800}"
       },
       "axis": {
-        "$value": "{color.neutral.400}"
+        "$value": "{color.blue.200}"
       }
     },
     "status": {
@@ -211,7 +211,7 @@
           "$value": "{color.red.400}"
         },
         "cancelled": {
-          "$value": "{color.neutral.400}"
+          "$value": "{color.blue.200}"
         }
       },
       "moderation": {
