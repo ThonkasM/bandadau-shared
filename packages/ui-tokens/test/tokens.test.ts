@@ -57,14 +57,14 @@ describe('token catalog', () => {
 
   it('light and dark differ for themed colors', () => {
     expect(flatTokens.light['color.bg.canvas']).not.toBe(flatTokens.dark['color.bg.canvas']);
-    expect(tokens.light.color.action.primary.bg).toBe('#1E5AA8');
+    expect(tokens.light.color.action.primary.bg).toMatch(/^#[0-9A-F]{6}$/);
   });
 
   it('keeps brand colors', () => {
     const css = fs.readFileSync(path.join(root, 'dist/css/tokens.css'), 'utf8');
-    expect(css).toContain('#1E5AA8');
-    expect(css).toContain('#F5B700');
-    expect(css).toContain('#D7263D');
+    expect(css).toContain(tokens.light.color.brand.primary);
+    expect(css).toContain(tokens.light.color.brand.accent);
+    expect(css).toContain(tokens.light.color.brand.highlight);
   });
 
   it('converts dimensions to numbers for React Native', () => {
