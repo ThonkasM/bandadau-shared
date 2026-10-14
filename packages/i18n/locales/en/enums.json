@@ -1,0 +1,265 @@
+{
+  "AgentKind": {
+    "MONITORING": "Monitoring",
+    "REPORT": "Reports",
+    "EXTERNAL_MCP": "External MCP agent"
+  },
+  "AgentRunStatus": {
+    "RUNNING": "Running",
+    "SUCCEEDED": "Succeeded",
+    "FAILED": "Failed",
+    "ABORTED": "Aborted"
+  },
+  "AlertKind": {
+    "SERVICE_DOWN": "Service down",
+    "SAGA_FAILURES": "SAGA failures",
+    "DLQ_BACKLOG": "DLQ backlog",
+    "MODERATION_BACKLOG": "Moderation backlog",
+    "METRIC_ANOMALY": "Metric anomaly",
+    "MODERATION_ESCALATION": "Moderation escalation"
+  },
+  "AlertSeverity": {
+    "INFO": "Info",
+    "WARNING": "Warning",
+    "CRITICAL": "Critical"
+  },
+  "AlertSource": {
+    "MONITORING_AGENT": "Monitoring agent",
+    "N8N": "Automation (n8n)",
+    "MANUAL": "Manual"
+  },
+  "AlertStatus": {
+    "OPEN": "Open",
+    "ACKNOWLEDGED": "Acknowledged",
+    "RESOLVED": "Resolved"
+  },
+  "CommentStatus": {
+    "VISIBLE": "Visible",
+    "HIDDEN": "Hidden",
+    "REMOVED": "Removed"
+  },
+  "ContentReportTargetType": {
+    "POST": "Post",
+    "COMMENT": "Comment"
+  },
+  "DevicePlatform": {
+    "IOS": "iOS",
+    "ANDROID": "Android",
+    "WEB": "Web"
+  },
+  "EventStatus": {
+    "DRAFT": "Draft",
+    "PUBLISHED": "Published",
+    "CANCELLED": "Cancelled",
+    "FINISHED": "Finished"
+  },
+  "GeneratedReportStatus": {
+    "PENDING": "Pending",
+    "RUNNING": "Generating",
+    "READY": "Ready",
+    "FAILED": "Failed"
+  },
+  "GroupMemberRole": {
+    "OWNER": "Owner",
+    "ADMIN": "Admin",
+    "MEMBER": "Member"
+  },
+  "GroupPrivacy": {
+    "PUBLIC": "Public",
+    "PRIVATE": "Private"
+  },
+  "HandoffTargetApp": {
+    "ADMIN": "Admin panel",
+    "APP": "App"
+  },
+  "HiddenReason": {
+    "MEDIA_FLAGGED": "Media flagged",
+    "REPORTED": "Reported",
+    "MODERATOR": "Moderator"
+  },
+  "HumanDecision": {
+    "APPROVE": "Approve",
+    "REJECT": "Reject"
+  },
+  "LedgerEntryType": {
+    "TOPUP": "Top-up",
+    "DEBIT": "Debit",
+    "REFUND": "Refund"
+  },
+  "Locale": {
+    "es": "Spanish",
+    "en": "English"
+  },
+  "MediaKind": {
+    "IMAGE": "Image",
+    "VIDEO": "Video"
+  },
+  "MediaPurpose": {
+    "POST": "Post",
+    "AVATAR": "Avatar",
+    "EVENT_COVER": "Event cover"
+  },
+  "MediaReviewDecision": {
+    "APPROVE": "Approve",
+    "REJECT": "Reject"
+  },
+  "MediaStatus": {
+    "PENDING_UPLOAD": "Pending upload",
+    "PROCESSING": "Processing",
+    "APPROVED": "Approved",
+    "FLAGGED": "Flagged for review",
+    "REJECTED": "Rejected"
+  },
+  "MembershipStatus": {
+    "PENDING": "Pending",
+    "ACTIVE": "Active",
+    "REJECTED": "Rejected",
+    "LEFT": "Left the group"
+  },
+  "ModerationDecision": {
+    "ALLOW": "Allow",
+    "REVIEW": "Review",
+    "BLOCK": "Block"
+  },
+  "ModerationQueueChangeType": {
+    "ADDED": "Added to queue",
+    "RESOLVED": "Resolved"
+  },
+  "ModerationSource": {
+    "AI": "Automatic detection",
+    "REPORTS": "Reports"
+  },
+  "NotificationType": {
+    "REGISTRATION_CONFIRMED": "Registration confirmed",
+    "REGISTRATION_FAILED": "Registration failed",
+    "EVENT_REMINDER": "Event reminder",
+    "NEW_COMMENT": "New comment",
+    "NEW_REACTION": "New reaction",
+    "NEW_FOLLOWER": "New follower",
+    "GROUP_REQUEST": "Group request",
+    "TOPUP_PAID": "Top-up credited",
+    "CONTENT_FLAGGED": "Content flagged",
+    "ALERT": "Alert",
+    "WELCOME": "Welcome",
+    "REGISTRATION_CANCELLED": "Registration cancelled",
+    "EVENT_CANCELLED": "Event cancelled",
+    "NEW_EVENT": "New event"
+  },
+  "PostStatus": {
+    "PENDING_MEDIA": "Processing media",
+    "PUBLISHED": "Published",
+    "HIDDEN": "Hidden",
+    "REMOVED": "Removed"
+  },
+  "PostVisibility": {
+    "PUBLIC": "Public",
+    "FOLLOWERS": "Followers only",
+    "GROUP": "Group"
+  },
+  "ReactionType": {
+    "LIKE": "Like",
+    "HELPFUL": "Helpful",
+    "FUNNY": "Funny",
+    "SUPPORT": "Support"
+  },
+  "RegistrationFailureReason": {
+    "EVENT_FULL": "The event is full",
+    "INSUFFICIENT_FUNDS": "Insufficient credits",
+    "WALLET_NOT_FOUND": "Wallet not found",
+    "TICKET_ISSUE_FAILED": "The ticket could not be issued",
+    "TIMEOUT": "The request timed out",
+    "SAGA_ABORTED": "The registration was aborted"
+  },
+  "RegistrationStatus": {
+    "PENDING": "Pending",
+    "CONFIRMED": "Confirmed",
+    "FAILED": "Failed",
+    "CANCELLATION_PENDING": "Cancellation in progress",
+    "CANCELLED": "Cancelled"
+  },
+  "ReportReason": {
+    "SPAM": "Spam",
+    "HARASSMENT": "Harassment",
+    "NSFW": "Explicit content",
+    "VIOLENCE": "Violence",
+    "MISINFORMATION": "Misinformation",
+    "OTHER": "Other"
+  },
+  "ReportResolution": {
+    "KEEP": "Keep content",
+    "REMOVE": "Remove content"
+  },
+  "ReportStatus": {
+    "OPEN": "Open",
+    "RESOLVED_KEPT": "Resolved: kept",
+    "RESOLVED_REMOVED": "Resolved: removed"
+  },
+  "ReportTargetType": {
+    "POST": "Post",
+    "COMMENT": "Comment"
+  },
+  "Role": {
+    "STUDENT": "Student",
+    "ORGANIZER": "Organizer",
+    "MODERATOR": "Moderator",
+    "ADMIN": "Administrator"
+  },
+  "SagaStatus": {
+    "STARTED": "Started",
+    "AWAITING_DEBIT": "Awaiting debit",
+    "AWAITING_TICKET": "Awaiting ticket",
+    "COMPENSATING": "Compensating",
+    "COMPLETED": "Completed",
+    "COMPENSATED": "Compensated",
+    "FAILED": "Failed"
+  },
+  "SagaStep": {
+    "RESERVE_SEAT": "Reserve seat",
+    "DEBIT_CREDITS": "Debit credits",
+    "ISSUE_TICKET": "Issue ticket",
+    "VOID_TICKET": "Void ticket",
+    "REFUND_CREDITS": "Refund credits",
+    "RELEASE_SEAT": "Release seat"
+  },
+  "SagaType": {
+    "REGISTRATION": "Registration",
+    "CANCELLATION": "Cancellation"
+  },
+  "ServiceStatus": {
+    "UP": "Up",
+    "DEGRADED": "Degraded",
+    "DOWN": "Down"
+  },
+  "ThemePreference": {
+    "SYSTEM": "Follow system",
+    "LIGHT": "Light",
+    "DARK": "Dark"
+  },
+  "TicketStatus": {
+    "ISSUED": "Issued",
+    "USED": "Used",
+    "VOIDED": "Voided"
+  },
+  "TimeBucket": {
+    "DAY": "Day",
+    "WEEK": "Week",
+    "MONTH": "Month"
+  },
+  "TopUpPackage": {
+    "CREDITS_20": "20 credits",
+    "CREDITS_50": "50 credits",
+    "CREDITS_100": "100 credits"
+  },
+  "TopUpStatus": {
+    "PENDING": "Pending",
+    "PAID": "Paid",
+    "FAILED": "Failed",
+    "EXPIRED": "Expired"
+  },
+  "UserStatus": {
+    "PENDING_VERIFICATION": "Pending verification",
+    "ACTIVE": "Active",
+    "SUSPENDED": "Suspended",
+    "DELETED": "Deleted"
+  }
+}

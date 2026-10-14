@@ -1,0 +1,56 @@
+{
+  "name": "@bandada/i18n",
+  "version": "0.1.0",
+  "description": "Bandada U shared i18n: es/en catalogs (ICU), formatting helpers and the i18n check CLI",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": false,
+  "files": ["dist", "locales", "scripts", "bin"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": { "bandada-i18n-check": "./bin/bandada-i18n-check.mjs" },
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+    },
+    "./format": {
+      "import": { "types": "./dist/format.d.ts", "default": "./dist/format.js" },
+      "require": { "types": "./dist/format.d.cts", "default": "./dist/format.cjs" }
+    },
+    "./resolve-locale": {
+      "import": { "types": "./dist/resolve-locale.d.ts", "default": "./dist/resolve-locale.js" },
+      "require": { "types": "./dist/resolve-locale.d.cts", "default": "./dist/resolve-locale.cjs" }
+    },
+    "./config": {
+      "import": { "types": "./dist/config.d.ts", "default": "./dist/config.js" },
+      "require": { "types": "./dist/config.d.cts", "default": "./dist/config.cjs" }
+    },
+    "./locales/*": "./locales/*",
+    "./errors": {
+      "import": { "types": "./dist/errors.d.ts", "default": "./dist/errors.js" },
+      "require": { "types": "./dist/errors.d.cts", "default": "./dist/errors.cjs" }
+    },
+    "./scripts/i18n-check": "./scripts/i18n-check.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "i18n:check": "node bin/bandada-i18n-check.mjs locales --contracts ../../../bandadau-docs/contracts",
+    "i18n:extract-errors": "node scripts/extract-error-codes.mjs ../../../bandadau-docs/contracts/openapi"
+  },
+  "dependencies": {
+    "@formatjs/icu-messageformat-parser": "^3.5.21"
+  },
+  "devDependencies": {
+    "@bandada/tsconfig": "workspace:*",
+    "@types/node": "^24.19.2",
+    "tsup": "^9.0.0",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.4",
+    "yaml": "^2.9.1"
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "AgentKind": {
+    "MONITORING": "Monitoreo",
+    "REPORT": "Reportes",
+    "EXTERNAL_MCP": "Agente MCP externo"
+  },
+  "AgentRunStatus": {
+    "RUNNING": "En ejecución",
+    "SUCCEEDED": "Exitoso",
+    "FAILED": "Fallido",
+    "ABORTED": "Abortado"
+  },
+  "AlertKind": {
+    "SERVICE_DOWN": "Servicio caído",
+    "SAGA_FAILURES": "Fallos de SAGA",
+    "DLQ_BACKLOG": "Mensajes acumulados en DLQ",
+    "MODERATION_BACKLOG": "Cola de moderación acumulada",
+    "METRIC_ANOMALY": "Anomalía en métricas",
+    "MODERATION_ESCALATION": "Escalamiento de moderación"
+  },
+  "AlertSeverity": {
+    "INFO": "Informativa",
+    "WARNING": "Advertencia",
+    "CRITICAL": "Crítica"
+  },
+  "AlertSource": {
+    "MONITORING_AGENT": "Agente de monitoreo",
+    "N8N": "Automatización (n8n)",
+    "MANUAL": "Manual"
+  },
+  "AlertStatus": {
+    "OPEN": "Abierta",
+    "ACKNOWLEDGED": "Reconocida",
+    "RESOLVED": "Resuelta"
+  },
+  "CommentStatus": {
+    "VISIBLE": "Visible",
+    "HIDDEN": "Oculto",
+    "REMOVED": "Eliminado"
+  },
+  "ContentReportTargetType": {
+    "POST": "Publicación",
+    "COMMENT": "Comentario"
+  },
+  "DevicePlatform": {
+    "IOS": "iOS",
+    "ANDROID": "Android",
+    "WEB": "Web"
+  },
+  "EventStatus": {
+    "DRAFT": "Borrador",
+    "PUBLISHED": "Publicado",
+    "CANCELLED": "Cancelado",
+    "FINISHED": "Finalizado"
+  },
+  "GeneratedReportStatus": {
+    "PENDING": "Pendiente",
+    "RUNNING": "Generando",
+    "READY": "Listo",
+    "FAILED": "Fallido"
+  },
+  "GroupMemberRole": {
+    "OWNER": "Propietario",
+    "ADMIN": "Administrador",
+    "MEMBER": "Miembro"
+  },
+  "GroupPrivacy": {
+    "PUBLIC": "Público",
+    "PRIVATE": "Privado"
+  },
+  "HandoffTargetApp": {
+    "ADMIN": "Panel de administración",
+    "APP": "Aplicación"
+  },
+  "HiddenReason": {
+    "MEDIA_FLAGGED": "Contenido multimedia marcado",
+    "REPORTED": "Denunciado",
+    "MODERATOR": "Moderador"
+  },
+  "HumanDecision": {
+    "APPROVE": "Aprobar",
+    "REJECT": "Rechazar"
+  },
+  "LedgerEntryType": {
+    "TOPUP": "Recarga",
+    "DEBIT": "Débito",
+    "REFUND": "Reembolso"
+  },
+  "Locale": {
+    "es": "Español",
+    "en": "Inglés"
+  },
+  "MediaKind": {
+    "IMAGE": "Imagen",
+    "VIDEO": "Video"
+  },
+  "MediaPurpose": {
+    "POST": "Publicación",
+    "AVATAR": "Avatar",
+    "EVENT_COVER": "Portada de evento"
+  },
+  "MediaReviewDecision": {
+    "APPROVE": "Aprobar",
+    "REJECT": "Rechazar"
+  },
+  "MediaStatus": {
+    "PENDING_UPLOAD": "Pendiente de subida",
+    "PROCESSING": "Procesando",
+    "APPROVED": "Aprobado",
+    "FLAGGED": "Marcado para revisión",
+    "REJECTED": "Rechazado"
+  },
+  "MembershipStatus": {
+    "PENDING": "Pendiente",
+    "ACTIVE": "Activa",
+    "REJECTED": "Rechazada",
+    "LEFT": "Abandonó el grupo"
+  },
+  "ModerationDecision": {
+    "ALLOW": "Permitir",
+    "REVIEW": "Revisar",
+    "BLOCK": "Bloquear"
+  },
+  "ModerationQueueChangeType": {
+    "ADDED": "Agregado a la cola",
+    "RESOLVED": "Resuelto"
+  },
+  "ModerationSource": {
+    "AI": "Detección automática",
+    "REPORTS": "Denuncias"
+  },
+  "NotificationType": {
+    "REGISTRATION_CONFIRMED": "Inscripción confirmada",
+    "REGISTRATION_FAILED": "Inscripción fallida",
+    "EVENT_REMINDER": "Recordatorio de evento",
+    "NEW_COMMENT": "Nuevo comentario",
+    "NEW_REACTION": "Nueva reacción",
+    "NEW_FOLLOWER": "Nuevo seguidor",
+    "GROUP_REQUEST": "Solicitud de grupo",
+    "TOPUP_PAID": "Recarga acreditada",
+    "CONTENT_FLAGGED": "Contenido marcado",
+    "ALERT": "Alerta",
+    "WELCOME": "Bienvenida",
+    "REGISTRATION_CANCELLED": "Inscripción cancelada",
+    "EVENT_CANCELLED": "Evento cancelado",
+    "NEW_EVENT": "Nuevo evento"
+  },
+  "PostStatus": {
+    "PENDING_MEDIA": "Procesando contenido",
+    "PUBLISHED": "Publicada",
+    "HIDDEN": "Oculta",
+    "REMOVED": "Eliminada"
+  },
+  "PostVisibility": {
+    "PUBLIC": "Pública",
+    "FOLLOWERS": "Solo seguidores",
+    "GROUP": "Grupo"
+  },
+  "ReactionType": {
+    "LIKE": "Me gusta",
+    "HELPFUL": "Útil",
+    "FUNNY": "Divertido",
+    "SUPPORT": "Apoyo"
+  },
+  "RegistrationFailureReason": {
+    "EVENT_FULL": "El evento está lleno",
+    "INSUFFICIENT_FUNDS": "Créditos insuficientes",
+    "WALLET_NOT_FOUND": "No se encontró la billetera",
+    "TICKET_ISSUE_FAILED": "No se pudo emitir la entrada",
+    "TIMEOUT": "Se agotó el tiempo de espera",
+    "SAGA_ABORTED": "La inscripción fue abortada"
+  },
+  "RegistrationStatus": {
+    "PENDING": "Pendiente",
+    "CONFIRMED": "Confirmada",
+    "FAILED": "Fallida",
+    "CANCELLATION_PENDING": "Cancelación en curso",
+    "CANCELLED": "Cancelada"
+  },
+  "ReportReason": {
+    "SPAM": "Spam",
+    "HARASSMENT": "Acoso",
+    "NSFW": "Contenido sexual explícito",
+    "VIOLENCE": "Violencia",
+    "MISINFORMATION": "Desinformación",
+    "OTHER": "Otro"
+  },
+  "ReportResolution": {
+    "KEEP": "Mantener contenido",
+    "REMOVE": "Eliminar contenido"
+  },
+  "ReportStatus": {
+    "OPEN": "Abierta",
+    "RESOLVED_KEPT": "Resuelta: se mantuvo",
+    "RESOLVED_REMOVED": "Resuelta: se eliminó"
+  },
+  "ReportTargetType": {
+    "POST": "Publicación",
+    "COMMENT": "Comentario"
+  },
+  "Role": {
+    "STUDENT": "Estudiante",
+    "ORGANIZER": "Organizador",
+    "MODERATOR": "Moderador",
+    "ADMIN": "Administrador"
+  },
+  "SagaStatus": {
+    "STARTED": "Iniciada",
+    "AWAITING_DEBIT": "Esperando el débito",
+    "AWAITING_TICKET": "Esperando la entrada",
+    "COMPENSATING": "Compensando",
+    "COMPLETED": "Completada",
+    "COMPENSATED": "Compensada",
+    "FAILED": "Fallida"
+  },
+  "SagaStep": {
+    "RESERVE_SEAT": "Reservar cupo",
+    "DEBIT_CREDITS": "Debitar créditos",
+    "ISSUE_TICKET": "Emitir entrada",
+    "VOID_TICKET": "Anular entrada",
+    "REFUND_CREDITS": "Reembolsar créditos",
+    "RELEASE_SEAT": "Liberar cupo"
+  },
+  "SagaType": {
+    "REGISTRATION": "Inscripción",
+    "CANCELLATION": "Cancelación"
+  },
+  "ServiceStatus": {
+    "UP": "Operativo",
+    "DEGRADED": "Degradado",
+    "DOWN": "Caído"
+  },
+  "ThemePreference": {
+    "SYSTEM": "Seguir al sistema",
+    "LIGHT": "Claro",
+    "DARK": "Oscuro"
+  },
+  "TicketStatus": {
+    "ISSUED": "Emitida",
+    "USED": "Usada",
+    "VOIDED": "Anulada"
+  },
+  "TimeBucket": {
+    "DAY": "Día",
+    "WEEK": "Semana",
+    "MONTH": "Mes"
+  },
+  "TopUpPackage": {
+    "CREDITS_20": "20 créditos",
+    "CREDITS_50": "50 créditos",
+    "CREDITS_100": "100 créditos"
+  },
+  "TopUpStatus": {
+    "PENDING": "Pendiente",
+    "PAID": "Pagada",
+    "FAILED": "Fallida",
+    "EXPIRED": "Expirada"
+  },
+  "UserStatus": {
+    "PENDING_VERIFICATION": "Pendiente de verificación",
+    "ACTIVE": "Activo",
+    "SUSPENDED": "Suspendido",
+    "DELETED": "Eliminado"
+  }
+}
