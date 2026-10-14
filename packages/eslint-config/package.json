@@ -1,0 +1,42 @@
+{
+  "name": "@bandada/eslint-config",
+  "version": "0.1.0",
+  "description": "ESLint flat config presets for Bandada U",
+  "license": "UNLICENSED",
+  "type": "module",
+  "files": ["src"],
+  "exports": {
+    ".": "./src/base.js",
+    "./base": "./src/base.js",
+    "./node": "./src/node.js",
+    "./react": "./src/react.js",
+    "./next": "./src/next.js",
+    "./expo": "./src/expo.js",
+    "./angular": "./src/angular.js",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "node -e \"import('./src/base.js').then(()=>console.log('eslint-config ok'))\"",
+    "test": "vitest run",
+    "typecheck": "echo skip"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.39.5",
+    "@next/eslint-plugin-next": "^16.4.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-simple-import-sort": "^14.0.0",
+    "globals": "^17.13.0",
+    "typescript-eslint": "^8.71.2"
+  },
+  "peerDependencies": {
+    "eslint": "^9.0.0",
+    "typescript": ">=5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.4"
+  }
+}

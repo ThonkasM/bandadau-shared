@@ -1,0 +1,16 @@
+{
+  "name": "@bandada/tsconfig",
+  "version": "0.1.0",
+  "description": "Shared TypeScript configs for Bandada U",
+  "license": "UNLICENSED",
+  "files": ["*.json"],
+  "exports": {
+    "./base.json": "./base.json",
+    "./node.json": "./node.json",
+    "./react.json": "./react.json",
+    "./next.json": "./next.json",
+    "./expo.json": "./expo.json",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false
+}
