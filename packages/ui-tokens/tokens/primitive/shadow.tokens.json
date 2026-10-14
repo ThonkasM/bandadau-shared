@@ -1,0 +1,12 @@
+{
+  "shadow-ink": {
+    "$type": "color",
+    "$description": "Shadow base colors (alpha), referenced by the semantic shadow scale of each mode.",
+    "light": {
+      "$value": "rgba(18, 17, 14, 0.12)"
+    },
+    "dark": {
+      "$value": "rgba(0, 0, 0, 0.55)"
+    }
+  }
+}

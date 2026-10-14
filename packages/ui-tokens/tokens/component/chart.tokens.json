@@ -1,0 +1,16 @@
+{
+  "chart": {
+    "bg": {
+      "$value": "{color.bg.surface}"
+    },
+    "grid": {
+      "$value": "{color.chart.grid}"
+    },
+    "axis": {
+      "$value": "{color.chart.axis}"
+    },
+    "series-1": {
+      "$value": "{color.chart.series.1}"
+    }
+  }
+}

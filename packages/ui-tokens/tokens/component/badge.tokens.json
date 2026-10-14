@@ -1,0 +1,47 @@
+{
+  "badge": {
+    "neutral": {
+      "bg": {
+        "$value": "{color.bg.muted}"
+      },
+      "fg": {
+        "$value": "{color.text.secondary}"
+      }
+    },
+    "success": {
+      "bg": {
+        "$value": "{color.feedback.success.bg}"
+      },
+      "fg": {
+        "$value": "{color.feedback.success.fg}"
+      }
+    },
+    "warning": {
+      "bg": {
+        "$value": "{color.feedback.warning.bg}"
+      },
+      "fg": {
+        "$value": "{color.feedback.warning.fg}"
+      }
+    },
+    "danger": {
+      "bg": {
+        "$value": "{color.feedback.danger.bg}"
+      },
+      "fg": {
+        "$value": "{color.feedback.danger.fg}"
+      }
+    },
+    "info": {
+      "bg": {
+        "$value": "{color.feedback.info.bg}"
+      },
+      "fg": {
+        "$value": "{color.feedback.info.fg}"
+      }
+    },
+    "radius": {
+      "$value": "{radius.full}"
+    }
+  }
+}

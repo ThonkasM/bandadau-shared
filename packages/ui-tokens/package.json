@@ -1,0 +1,44 @@
+{
+  "name": "@bandada/ui-tokens",
+  "version": "0.1.0",
+  "description": "Bandada U design tokens (DTCG) compiled with Style Dictionary: CSS vars, Tailwind v4 theme, SCSS, typed TS",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": false,
+  "files": ["dist"],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+    },
+    "./theme-script": {
+      "import": { "types": "./dist/theme-script.d.ts", "default": "./dist/theme-script.js" },
+      "require": { "types": "./dist/theme-script.d.cts", "default": "./dist/theme-script.cjs" }
+    },
+    "./css/*": "./dist/css/*",
+    "./scss/*": "./dist/scss/*",
+    "./json/*": "./dist/json/*",
+    "./ts/tokens.ts": "./dist/ts/tokens.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "pnpm build:tokens && pnpm build:js && pnpm check:contrast",
+    "build:tokens": "node build/style-dictionary.config.mjs",
+    "build:js": "tsup",
+    "check:contrast": "node scripts/check-contrast.mjs",
+    "test": "node build/style-dictionary.config.mjs && vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@bandada/tsconfig": "workspace:*",
+    "@types/node": "^24.19.2",
+    "sass": "^1.93.0",
+    "style-dictionary": "^4.4.0",
+    "tsup": "^9.0.0",
+    "typescript": "~5.9.3",
+    "vitest": "^5.0.4"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "button": {
+    "primary": {
+      "bg": {
+        "$value": "{color.action.primary.bg}"
+      },
+      "bg-hover": {
+        "$value": "{color.action.primary.bg-hover}"
+      },
+      "bg-pressed": {
+        "$value": "{color.action.primary.bg-pressed}"
+      },
+      "fg": {
+        "$value": "{color.action.primary.fg}"
+      }
+    },
+    "secondary": {
+      "bg": {
+        "$value": "{color.action.secondary.bg}"
+      },
+      "bg-hover": {
+        "$value": "{color.action.secondary.bg-hover}"
+      },
+      "bg-pressed": {
+        "$value": "{color.action.secondary.bg-pressed}"
+      },
+      "fg": {
+        "$value": "{color.action.secondary.fg}"
+      }
+    },
+    "danger": {
+      "bg": {
+        "$value": "{color.action.danger.bg}"
+      },
+      "bg-hover": {
+        "$value": "{color.action.danger.bg-hover}"
+      },
+      "bg-pressed": {
+        "$value": "{color.action.danger.bg-pressed}"
+      },
+      "fg": {
+        "$value": "{color.action.danger.fg}"
+      }
+    },
+    "disabled": {
+      "bg": {
+        "$value": "{color.action.disabled.bg}"
+      },
+      "fg": {
+        "$value": "{color.action.disabled.fg}"
+      }
+    },
+    "radius": {
+      "$value": "{radius.md}"
+    },
+    "padding-x": {
+      "$value": "{space.4}"
+    },
+    "padding-y": {
+      "$value": "{space.2}"
+    },
+    "font-weight": {
+      "$value": "{font.weight.semibold}"
+    }
+  }
+}

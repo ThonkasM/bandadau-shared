@@ -1,0 +1,28 @@
+{
+  "input": {
+    "bg": {
+      "$value": "{color.bg.surface}"
+    },
+    "fg": {
+      "$value": "{color.text.primary}"
+    },
+    "placeholder": {
+      "$value": "{color.text.muted}"
+    },
+    "border": {
+      "$value": "{color.border.strong}"
+    },
+    "border-focus": {
+      "$value": "{color.border.focus}"
+    },
+    "radius": {
+      "$value": "{radius.md}"
+    },
+    "padding-x": {
+      "$value": "{space.3}"
+    },
+    "padding-y": {
+      "$value": "{space.2}"
+    }
+  }
+}

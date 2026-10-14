@@ -1,0 +1,19 @@
+{
+  "card": {
+    "bg": {
+      "$value": "{color.bg.surface}"
+    },
+    "border": {
+      "$value": "{color.border.default}"
+    },
+    "radius": {
+      "$value": "{radius.lg}"
+    },
+    "padding": {
+      "$value": "{space.4}"
+    },
+    "shadow": {
+      "$value": "{shadow.sm}"
+    }
+  }
+}
