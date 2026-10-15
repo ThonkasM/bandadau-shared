@@ -7,7 +7,6 @@
 *.key
 node_modules/
 dist/
-build/
 coverage/
 .idea/
 .vscode/*
